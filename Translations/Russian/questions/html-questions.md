@@ -2,17 +2,17 @@
 
 Ответы на [вопросы кандидату на должность front-end разработчика - HTML вопросы](https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Russian#html). Pull requests предложения и исправления приветствуются!
 
-* [Для чего нужен `doctype`?](#what-does-a-doctype-do)
-* [Как следует оформлять страницу, содержимое которой может быть на разных языках?](#how-do-you-serve-a-page-with-content-in-multiple-languages)
-* [На что необходимо обратить внимание при разработке мультиязычных сайтов?](#what-kind-of-things-must-you-be-wary-of-when-designing-or-developing-for-multilingual-sites)
-* [Для чего отлично подойдут `data-` атрибуты?](#what-are-data--attributes-good-for)
-* [Представьте HTML5 как открытую веб-платформу. Из каких блоков состоит HTML5?](#consider-html5-as-an-open-web-platform-what-are-the-building-blocks-of-html5)
-* [Объясните разницу между `cookie`, `sessionStorage` и `localStorage`.](#describe-the-difference-between-a-cookie-sessionstorage-and-localstorage)
-* [Объясните разницу между `<script>`, `<script async>` и `<script defer>`.](#describe-the-difference-between-script-script-async-and-script-defer)
-* [Почему хорошей практикой считается располагать `<link>` для подключения CSS между `<head></head>`, а `<script>` для подключения JS ставить перед `</body>`? Знаете ли вы исключения?](#why-is-it-generally-a-good-idea-to-position-css-links-between-headhead-and-js-scripts-just-before-body-do-you-know-any-exceptions)
-* [Что такое прогрессивный рендеринг?](#what-is-progressive-rendering)
-* [Для чего используется атрибут `srcset` в теге изображения? Опишите процесс, который использует браузер при оценке содержимого этого атрибута.](#why-you-would-use-a-srcset-attribute-in-an-image-tag-explain-the-process-the-browser-uses-when-evaluating-the-content-of-this-attribute)
-* [Приходилось ли вам работать с языками HTML-шаблонизации?](#have-you-used-different-html-templating-languages-before)
+* [Для чего нужен `doctype`?](#Для-чего-нужен-doctype)
+* [Как следует оформлять страницу, содержимое которой может быть на разных языках?](#Как-следует-оформлять-страницу-содержимое-которой-может-быть-на-разных-языках)
+* [На что необходимо обратить внимание при разработке мультиязычных сайтов?](#На-что-необходимо-обратить-внимание-при-разработке-мультиязычных-сайтов)
+* [Для чего отлично подойдут `data-` атрибуты?](#Для-чего-отлично-подойдут-data--атрибуты)
+* [Представьте HTML5 как открытую веб-платформу. Из каких блоков состоит HTML5?](#Представьте-HTML5-как-открытую-веб-платформу-Из-каких-блоков-состоит-HTML5)
+* [Объясните разницу между `cookie`, `sessionStorage` и `localStorage`.](#Объясните-разницу-между-cookie-sessionStorage-и-localStorage)
+* [Объясните разницу между `<script>`, `<script async>` и `<script defer>`.](#Объясните-разницу-между-script-script-async-и-script-defer)
+* [Почему хорошей практикой считается располагать `<link>` для подключения CSS между `<head></head>`, а `<script>` для подключения JS ставить перед `</body>`? Знаете ли вы исключения?](#Почему-хорошей-практикой-считается-располагать-link-для-подключения-CSS-между-head-head-а-script-для-подключения-JS-ставить-перед-body-Знаете-ли-вы-исключения)
+* [Что такое прогрессивный рендеринг?](#Что-такое-прогрессивный-рендеринг)
+* [Для чего используется атрибут `srcset` в теге изображения? Опишите процесс, который использует браузер при оценке содержимого этого атрибута.](#Для-чего-используется-атрибут-srcset-в-теге-изображения-Опишите-процесс-который-использует-браузер-при-оценке-содержимого-этого-атрибута)
+* [Приходилось ли вам работать с языками HTML-шаблонизации?](#Приходилось-ли-вам-работать-с-языками-HTML-шаблонизации)
 
 ### Для чего нужен `doctype`?
 
@@ -26,7 +26,7 @@ Moral of the story - just add `<!DOCTYPE html>` at the start of your page.
 * https://www.w3.org/QA/Tips/Doctype
 * https://quirks.spec.whatwg.org/#history
 
-[[↑] К оглавлению](#html-questions)
+[[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### Как следует оформлять страницу, содержимое которой может быть на разных языках?
 
@@ -40,7 +40,7 @@ In the back end, the HTML markup will contain `i18n` placeholders and content fo
 
 * https://www.w3.org/International/getting-started/language
 
-[[↑] К оглавлению](#html-questions)
+[[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### На что необходимо обратить внимание при разработке мультиязычных сайтов?
 
@@ -57,7 +57,7 @@ In the back end, the HTML markup will contain `i18n` placeholders and content fo
 
 * https://www.quora.com/What-kind-of-things-one-should-be-wary-of-when-designing-or-developing-for-multilingual-sites
 
-[[↑] К оглавлению](#html-questions)
+[[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### Для чего отлично подойдут `data-` атрибуты?
 
@@ -70,7 +70,7 @@ These days, using `data-` attributes is not encouraged. One reason is that users
 * http://html5doctor.com/html5-custom-data-attributes/
 * https://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes
 
-[[↑] К оглавлению](#html-questions)
+[[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### Представьте HTML5 как открытую веб-платформу. Из каких блоков состоит HTML5?
 
@@ -87,7 +87,7 @@ These days, using `data-` attributes is not encouraged. One reason is that users
 
 * https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
 
-[[↑] К оглавлению](#html-questions)
+[[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### Объясните разницу между `cookie`, `sessionStorage` и `localStorage`.
 
@@ -107,7 +107,7 @@ All the above-mentioned technologies are key-value storage mechanisms on the cli
 * https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 * http://tutorial.techaltum.com/local-and-session-storage.html
 
-[[↑] К оглавлению](#html-questions)
+[[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### Объясните разницу между `<script>`, `<script async>` и `<script defer>`.
 
@@ -123,7 +123,7 @@ Note: The `async` and `defer` attrib­utes are ignored for scripts that have no 
 * https://stackoverflow.com/questions/10808109/script-tag-async-defer
 * https://bitsofco.de/async-vs-defer/
 
-[[↑] К оглавлению](#html-questions)
+[[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### Почему хорошей практикой считается располагать `<link>` для подключения CSS между `<head></head>`, а `<script>` для подключения JS ставить перед `</body>`? Знаете ли вы исключения?
 
@@ -141,7 +141,7 @@ An exception for positioning of `<script>`s at the bottom is when your script co
 
 * https://developer.yahoo.com/performance/rules.html#css_top
 
-[[↑] К оглавлению](#html-questions)
+[[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### Что такое прогрессивный рендеринг?
 
@@ -160,7 +160,7 @@ Examples of such techniques:
 * https://stackoverflow.com/questions/33651166/what-is-progressive-rendering
 * http://www.ebaytechblog.com/2014/12/08/async-fragments-rediscovering-progressive-html-rendering-with-marko/
 
-[[↑] К оглавлению](#html-questions)
+[[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### Для чего используется атрибут `srcset` в теге изображения? Опишите процесс, который использует браузер при оценке содержимого этого атрибута.
 
@@ -181,13 +181,13 @@ If the resolution is retina (2x), the browser will use the closest resolution ab
 * https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
 * https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/
 
-[[↑] К оглавлению](#html-questions)
+[[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### Приходилось ли вам работать с языками HTML-шаблонизации?
 
 Yes, Pug (formerly Jade), ERB, Slim, Handlebars, Jinja, Liquid, just to name a few. In my opinion, they are more or less the same and provide similar functionality of escaping content and helpful filters for manipulating the data to be displayed. Most templating engines will also allow you to inject your own filters in the event you need custom processing before display.
 
-[[↑] К оглавлению](#html-questions)
+[[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### Другие ответы
 
