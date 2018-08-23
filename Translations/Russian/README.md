@@ -1,33 +1,35 @@
-<h1 align="center">Front End Interview Handbook</h1>
+<h1 align="center">Руководство для подготовки к интервью на должность Front-End разработчика</h1>
 
 <div align="center">
   <a href="https://dribbble.com/shots/4263961-Front-End-Interview-Scroll">
-    <img src="https://cdn.rawgit.com/yangshun/front-end-interview-handbook/23d89c8/assets/scroll.svg" alt="Front End Interview Handbook" width="400"/>
+    <img src="https://cdn.rawgit.com/yangshun/front-end-interview-handbook/23d89c8/assets/scroll.svg" alt="Руководство для подготовки к интервью на должность Front-End разработчика" width="400"/>
     </a>
   <br>
   <p>
-    <em>Credits: <a href="https://dribbble.com/shots/4263961-Front-End-Interview-Scroll">Illustration</a> by <a href="https://dribbble.com/yangheng">@yangheng</a>
+    <em><a href="https://dribbble.com/shots/4263961-Front-End-Interview-Scroll">Картинка</a> от <a href="https://dribbble.com/yangheng">@yangheng</a>
     </em>
   </p>
 </div>
 
-## What is this?
+## Что это?
 
-Unlike typical software engineer job interviews, front-end job interviews have less emphasis on algorithms and have more questions on intricate knowledge and expertise about the domain — HTML, CSS, JavaScript, just to name a few areas.
+Обычно программистов спрашивают на собеседованиях про алгоритмы и структуры данных, но для Front End разработчиков, так же, важны особенности таких областей, как  HTML, CSS, JavaScript.
 
-While there are some existing resources to help front end developers in preparing for interviews, they aren't as abundant as materials for a software engineer interview. Among the existing resources, probably the most helpful question bank would be [Front-end Developer Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions). Unfortunately, I couldn't find many complete and satisfactory answers to these questions online, hence here is my attempt at answering them. Being an open source repository, the project can live on with the support of the community as the state of web evolves.
+Есть сайты с материалами для подготовки Front-End разработчиков к интервью, но не так много как для остальных программистов, в частности Back End разработчиков.
+Среди ресурсов с вопросами для собеседования, самым полезным сборником является [Вопросы кандидату на должность front-end разработчика](https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Russian). Информация с ответами на эти вопросы раскинута по всему интернету, это моя попытка собрать всё в одном месте. Поскольку это open source репозиторий, проект может поддерживаться сообществом в актуальном состоянии.
 
-## Looking for Generic Interview Preparation?
+## А руководство по техническому интервью?
 
-You might be interested in the [Tech Interview Handbook](https://github.com/yangshun/tech-interview-handbook) which has helpful content on general coding interviews such as algorithms, behavioral questions and an [interview cheatsheet](https://github.com/yangshun/tech-interview-handbook/blob/master/preparing/cheatsheet.md)!
+Возможно, вас заинтересует [руководство по техническому интервью (Eng)](https://github.com/yangshun/tech-interview-handbook), которое содержит общие вопросы по кодированию, алгоритмам, структурам данных и [подготовке к интервью (Eng)](https://github.com/yangshun/tech-interview-handbook/blob/master/preparing/cheatsheet.md)!
 
-## Table of Contents
 
-1. [HTML Questions](questions/html-questions.md)
-1. [CSS Questions](questions/css-questions.md)
-1. [JavaScript Questions](questions/javascript-questions.md)
+## Содержание
 
-## Translations
+1. [HTML вопросы и ответы](questions/html-questions.md)
+1. [CSS вопросы и ответы](questions/css-questions.md)
+1. [JavaScript вопросы и ответы](questions/javascript-questions.md)
+
+## Переводы
 
 * [English](/README.md)
 * [Simplified Chinese (简体中文)](/Translations/Chinese/README.md)
@@ -35,20 +37,20 @@ You might be interested in the [Tech Interview Handbook](https://github.com/yang
 * [Japanese (日本語)](/Translations/Japanese/README.md)
 * [Korean](/Translations/Korean/README.md)
 
-## Related
+## Дополнительно
 
-If you are interested in how data structures are implemented, check out [Lago](https://github.com/yangshun/lago), a Data Structures and Algorithms library for JavaScript. It is pretty much still WIP but I intend to make it into a library that is able to be used in production and also a reference resource for revising Data Structures and Algorithms.
+Если вам интересны структуры данных и алгоритмы, то проверьте репозиторий [Lago (Eng)](https://github.com/yangshun/lago), там будет информация с примерами на JavaScript.
 
-## Contributing
+## Участие
 
-### Code of Conduct
+### Кодекс поведения
 
-We have adopted the same Code of Conduct as Facebook that we expect project participants to adhere to. Please read [the full text](https://code.facebook.com/codeofconduct) so that you can understand what actions will and will not be tolerated.
+Мы приняли тот же Кодекс поведения, что и Facebook, который ожидаем от участников проекта. Пожалуйста, прочтите [полный текст (Eng)](https://code.facebook.com/codeofconduct) чтобы понять, какие действия будут и не будут допускаться.
 
-### Contributing Guide
+### Руководство для участников
 
-Read our [contributing guide](CONTRIBUTING.md) to learn about how you can contribute, how to propose improvements or if you are interested in translating the content.
+Прочитайте наше [руководство по участию](CONTRIBUTING.md) чтобы узнать, как внести свой вклад, как предложить улучшения или как добавить новый перевод руководства.
 
-## License
+## Лицензия
 
-All projects and packages in this repository are [MIT licensed](/LICENSE).
+Все проекты и пакеты в этом репозитории под [MIT лицензией](/LICENSE).
