@@ -9,19 +9,18 @@
 * [Представьте HTML5 как открытую веб-платформу. Из каких блоков состоит HTML5?](#Представьте-html5-как-открытую-веб-платформу-Из-каких-блоков-состоит-html5)
 * [Объясните разницу между `cookie`, `sessionStorage` и `localStorage`.](#Объясните-разницу-между-cookie-sessionstorage-и-localstorage)
 * [Объясните разницу между `<script>`, `<script async>` и `<script defer>`.](#Объясните-разницу-между-script-script-async-и-script-defer)
-* [Почему хорошей практикой считается располагать `<link>` для подключения CSS между `<head></head>`, а `<script>` для подключения JS ставить перед `</body>`? Знаете ли вы исключения?](#Почему-хорошей-практикой-считается-располагать-link-для-подключения-CSS-между-head-head-а-script-для-подключения-JS-ставить-перед-body-Знаете-ли-вы-исключения)
+* [Почему хорошей практикой считается располагать `<link>` для подключения CSS между `<head></head>`, а `<script>` для подключения JS ставить перед `</body>`? Знаете ли вы исключения?](#Почему-хорошей-практикой-считается-располагать-link-для-подключения-css-между-headhead-а-script-для-подключения-js-ставить-перед-body-Знаете-ли-вы-исключения)
 * [Что такое прогрессивный рендеринг?](#Что-такое-прогрессивный-рендеринг)
 * [Для чего используется атрибут `srcset` в теге изображения? Опишите процесс, который использует браузер при оценке содержимого этого атрибута.](#Для-чего-используется-атрибут-srcset-в-теге-изображения-Опишите-процесс-который-использует-браузер-при-оценке-содержимого-этого-атрибута)
 * [Приходилось ли вам работать с языками HTML-шаблонизации?](#Приходилось-ли-вам-работать-с-языками-html-шаблонизации)
 
 ### Для чего нужен `doctype`?
 
-`DOCTYPE` is an abbreviation for “document type”. It is a declaration used in HTML to distinguish between standards mode and [quirks mode](https://quirks.spec.whatwg.org/#history). Its presence tells the browser to render the web page in standards mode.
-
-Moral of the story - just add `<!DOCTYPE html>` at the start of your page.
+Элемент `<!DOCTYPE>` предназначен для указания типа текущего документа — DTD (document type definition, описание типа документа). Это необходимо, чтобы браузер понимал, как следует интерпретировать текущую веб-страницу, поскольку HTML существует в нескольких версиях, кроме того, имеется XHTML (EXtensible HyperText Markup Language, расширенный язык разметки гипертекста), похожий на HTML, но различающийся с ним по синтаксису. Чтобы браузер «не путался» и понимал, согласно какому стандарту отображать веб-страницу и необходимо в первой строке кода задавать `<!DOCTYPE html>`.
 
 ###### Источники
 
+* http://htmlbook.ru/html/%21doctype
 * https://stackoverflow.com/questions/7695044/what-does-doctype-html-do
 * https://www.w3.org/QA/Tips/Doctype
 * https://quirks.spec.whatwg.org/#history
@@ -30,11 +29,11 @@ Moral of the story - just add `<!DOCTYPE html>` at the start of your page.
 
 ### Как следует оформлять страницу, содержимое которой может быть на разных языках?
 
-The question is a little vague, I will assume that it is asking about the most common case, which is how to serve a page with content available in multiple languages, but the content within the page should be displayed only in one consistent language.
+Вопрос немного расплывчатый, предположу, что спрашивается о наиболее распространенном случае, а именно о том, как оформлять страницу, доступную на нескольких языках, но на странице оформление должно быть только на одном языке.
 
-When an HTTP request is made to a server, the requesting user agent usually sends information about language preferences, such as in the `Accept-Language` header. The server can then use this information to return a version of the document in the appropriate language if such an alternative is available. The returned HTML document should also declare the `lang` attribute in the `<html>` tag, such as `<html lang="en">...</html>`.
+Когда HTTP запрос отправляется на сервер, браузерный клиент, обычно, передаёт информацию о языке системы, например в заголовке запроса `Accept-Language`. Сервер может использовать эту информацию из заголовка и вернуть нужную языковую версию страницы, если таковая имеется, иначе вернётся страница по умолчанию. Возвращаемый HTML документ, должен содержать атрибут `lang` в `<html>` тэге, например `<html lang="en">...</html>`
 
-In the back end, the HTML markup will contain `i18n` placeholders and content for the specific language stored in YML or JSON formats. The server then dynamically generates the HTML page with content in that particular language, usually with the help of a back end framework.
+На сервере, разметка HTML содержат `i18n` метки для вставки переводов, в зависимости от языка. Контекст для отображения содержится в специальных языковых хранилищах, например в файлах YML или JSON. Затем сервер динамически генерирует HTML-страницу с содержимым на выбранном языке, обычно с помощью серверного фреймворка/платформы.
 
 ###### Источники
 
@@ -44,14 +43,14 @@ In the back end, the HTML markup will contain `i18n` placeholders and content fo
 
 ### На что необходимо обратить внимание при разработке мультиязычных сайтов?
 
-* Use `lang` attribute in your HTML.
-* Directing users to their native language - Allow a user to change his country/language easily without hassle.
-* Text in images is not a scalable approach - Placing text in an image is still a popular way to get good-looking, non-system fonts to display on any computer. However, to translate image text, each string of text will need to have it's a separate image created for each language. Anything more than a handful of replacements like this can quickly get out of control.
-* Restrictive words/sentence length - Some content can be longer when written in another language. Be wary of layout or overflow issues in the design. It's best to avoid designing where the amount of text would make or break a design. Character counts come into play with things like headlines, labels, and buttons. They are less of an issue with free-flowing text such as body text or comments.
-* Be mindful of how colors are perceived - Colors are perceived differently across languages and cultures. The design should use color appropriately.
-* Formatting dates and currencies - Calendar dates are sometimes presented in different ways. Eg. "May 31, 2012" in the U.S. vs. "31 May 2012" in parts of Europe.
-* Do not concatenate translated strings - Do not do anything like `"The date today is " + date`. It will break in languages with different word order. Use a template string with parameters substitution for each language instead. For example, look at the following two sentences in English and Chinese respectively: `I will travel on {% date %}` and `{% date %} 我会出发`. Note that the position of the variable is different due to grammar rules of the language.
-* Language reading direction - In English, we read from left-to-right, top-to-bottom, in traditional Japanese, text is read up-to-down, right-to-left.
+* Использование `lang` атрибута в HTML.
+* Направление пользователей на их родной язык. Это позволяет пользователю легко изменить свою страну / язык без проблем.
+* Текст в изображениях, это не является масштабируемым подходом. Размещение текста в изображении является популярным способом получить красивые, несистемные шрифты для отображения на любом компьютере. Каждый поддерживаемый язык на сервере для пользователей, должен содержать такой же язык в изображении. Это очень накладно и может со временем выйти из-под контроля.
+* Ограничительные слова / длина предложения. Некоторый текст может быть длиннее или короче при написании на другом языке. Будьте осторожны, текст на другом языке может вылезти за пределы отведённого места, при отображении на странице. Лучше избегать ситуаций, когда количество текста может привести к нарушению оформления страницы. Количество символов вступает в неприятную игру с такими элементами, как заголовки, ярлыки и кнопки. Текст статьи или комментарии менее подвержены проблемам переводов на разные языки.
+* Восприятие цвета. Цвета воспринимаются по-разному в разных языках и культурах. Дизайн должен использовать цвет соответствующим образом.
+* Форматирование дат и валют. Календарные даты иногда представлены по-разному. Например "Май 31, 2012" в США и "31 мая 2012" в России.
+* Не объединяйте переведенные строки. Не делайте ничего подобного `"Сегодняшняя дата" + date`. Это не подходит для языков с различным порядком слов. Вместо этого используйте шаблонную строку с подстановкой параметров для каждого языка. Например, посмотрите на следующие два предложения на английском и китайском языках: `"I will travel on {% date %}"` и `"{% date %} 我会出发"`.  Обратите внимание, что позиция переменной `date` отличается из-за грамматических правил языка.
+* Направление чтения языка. На русском языке, мы читаем слева-направо, сверху-вниз, на традиционном японском языке, текст читается вверх-вниз, справа-налево.
 
 ###### Источники
 
