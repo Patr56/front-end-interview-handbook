@@ -23,9 +23,9 @@ You might be interested in the [Tech Interview Handbook](https://github.com/yang
 
 ## Table of Contents
 
-1. [HTML Questions](/questions/html-questions.md)
-1. [CSS Questions](/questions/css-questions.md)
-1. [JavaScript Questions](/questions/javascript-questions.md)
+1. [HTML Questions](questions/html-questions.md)
+1. [CSS Questions](questions/css-questions.md)
+1. [JavaScript Questions](questions/javascript-questions.md)
 
 ## Translations
 
@@ -34,7 +34,6 @@ You might be interested in the [Tech Interview Handbook](https://github.com/yang
 * [Tagalog](/Translations/Tagalog/README.md)
 * [Japanese (日本語)](/Translations/Japanese/README.md)
 * [Korean](/Translations/Korean/README.md)
-* [Russian (Русский)](/Translations/Russian/README.md)
 
 ## Related
 
@@ -48,7 +47,7 @@ We have adopted the same Code of Conduct as Facebook that we expect project part
 
 ### Contributing Guide
 
-Read our [contributing guide](/CONTRIBUTING.md) to learn about how you can contribute, how to propose improvements or if you are interested in translating the content.
+Read our [contributing guide](CONTRIBUTING.md) to learn about how you can contribute, how to propose improvements or if you are interested in translating the content.
 
 ## License
 

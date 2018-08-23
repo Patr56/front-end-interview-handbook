@@ -33,6 +33,7 @@
 * [Simplified Chinese (简体中文)](/Translations/Chinese/README.md)
 * [Tagalog](/Translations/Tagalog/README.md)
 * [Japanese (日本語)](/Translations/Japanese/README.md)
+* [Russian (Русский)](/Translations/Russian/README.md)
 
 **製作中**
 

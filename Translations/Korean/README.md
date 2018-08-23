@@ -38,6 +38,7 @@
 * [Tagalog](/Translations/Tagalog/README.md)
 * [Japanese (日本語)](/Translations/Japanese/README.md)
 * [Korean (한국어)](/Translations/Korean/README.md)
+* [Russian (Русский)](/Translations/Russian/README.md)
 
 ## 관련 정보
 
