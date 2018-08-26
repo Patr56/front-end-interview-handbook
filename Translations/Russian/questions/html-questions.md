@@ -60,9 +60,9 @@
 
 ### Для чего отлично подойдут `data-` атрибуты?
 
-Before JavaScript frameworks became popular, front end developers used `data-` attributes to store extra data within the DOM itself, without other hacks such as non-standard attributes, extra properties on the DOM. It is intended to store custom data private to the page or application, for which there are no more appropriate attributes or elements.
+Перед тем, как JavaScript фреймворки стали популярными, программисты использовали `data-` атрибуты для хранения информации внутри DOM дерева, без использования нестандартных атрибутов HTML-тэгов, или дополнительных свойств DOM дерева. Этот способ подходит для хранения данных, скрытых от страницы или приложения, для которых больше нет соответствующих атрибутов или элементов.
 
-These days, using `data-` attributes is not encouraged. One reason is that users can modify the data attribute easily by using inspect element in the browser. The data model is better stored within JavaScript itself and stay updated with the DOM via data binding possibly through a library or a framework.
+В наши дни плохая практика использовать атрибуты `data -`. Пользователи могут сами легко изменить атрибут данных с помощью "Инструмента разработчика" в браузере. Модель данных лучше хранить в самом JavaScript и изменять DOM через привязку данных, например, через JavaScript библиотеку или фреймворк (React, Angular, Vue и т.д.).
 
 ###### Источники
 
@@ -73,36 +73,37 @@ These days, using `data-` attributes is not encouraged. One reason is that users
 
 ### Представьте HTML5 как открытую веб-платформу. Из каких блоков состоит HTML5?
 
-* Semantics - Allowing you to describe more precisely what your content is.
-* Connectivity - Allowing you to communicate with the server in new and innovative ways.
-* Offline and storage - Allowing webpages to store data on the client-side locally and operate offline more efficiently.
-* Multimedia - Making video and audio first-class citizens in the Open Web.
-* 2D/3D graphics and effects - Allowing a much more diverse range of presentation options.
-* Performance and integration - Providing greater speed optimization and better usage of computer hardware.
-* Device access - Allowing for the usage of various input and output devices.
-* Styling - Letting authors write more sophisticated themes.
+* Семантика - позволяет точнее описывать, что из себя представляет ваш контент (Новые HTML тэги).
+* Связь - новые способы общения с сервером (WebSockets, Server-sent события, WebRTC).
+* Оффлайн и Хранилище - методы, позволяющие сохранять информацию локально на стороне клиента (Кеш приложения, DOM Storage, IndexedDB).
+* Мультимедиа - создание и взаимодействие с видео и звуком (HTML5 audio и video, WebRTC, Camera API).
+* 2D/3D Графика и эффекты - способы значительно разнообразить  представление (Canvas, SVG, WebGL).
+* Производительность и интеграция - обеспечивает оптимизацию скорости и лучшеее использование компьютерного оборудования (Web Workers, JIT-компилирование).
+* Доступ к устройству - использование разных устройств для ввода и вывода информации (Camera API, Touch события, Геолокация).
+* Стилизация - создание изощренных и совершенных тем (CSS).
 
 ###### Источники
 
-* https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+* https://developer.mozilla.org/ru/docs/HTML/HTML5
 
 [[↑] К оглавлению](#html-Вопросы-и-ответы)
 
 ### Объясните разницу между `cookie`, `sessionStorage` и `localStorage`.
 
-All the above-mentioned technologies are key-value storage mechanisms on the client side. They are only able to store values as strings.
+Все вышеперечисленные технологии являются ключ-значение хранилищами данных на стороне клиента. Они могут хранить значения только в виде строк.
 
-|                                        | `cookie`                                                 | `localStorage` | `sessionStorage` |
-| -------------------------------------- | -------------------------------------------------------- | -------------- | ---------------- |
-| Initiator                              | Client or server. Server can use `Set-Cookie` header     | Client         | Client           |
-| Expiry                                 | Manually set                                             | Forever        | On tab close     |
-| Persistent across browser sessions     | Depends on whether expiration is set                     | Yes            | No               |
-| Sent to server with every HTTP request | Cookies are automatically being sent via `Cookie` header | No             | No               |
-| Capacity (per domain)                  | 4kb                                                      | 5MB            | 5MB              |
-| Accessibility                          | Any window                                               | Any window     | Same tab         |
+|                                               | `cookie`                                                    | `localStorage` | `sessionStorage`            |
+| --------------------------------------------- | ----------------------------------------------------------- | -------------- | --------------------------- |
+| Инициатор                                     | Клиент или сервер. Сервер использует заголовок `Set-Cookie` | Клиент         | Клиент                      |
+| Истечение                                     | Задаётся вручную                                            | Навсегда       | До закрытия вкладки вкладки |
+| Персистентность между сеансами браузера       | Зависит от того, установлен ли срок действия                | Да             | Нет                         |
+| Отправляется на сервер с каждым HTTP запросом | Автоматически проставляются в заголовке `Cookie` запроса    | Нет            | Нет                         |
+| Ограничения размера (на домен)                | 4kb                                                         | 10MB           | 5MB                         |
+| Доступность                                   | Все окна                                                    | Все окна       | Некоторые вкладки           |
 
 ###### Источники
 
+* https://www.html5rocks.com/en/tutorials/offline/quota-research/
 * https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 * http://tutorial.techaltum.com/local-and-session-storage.html
 
