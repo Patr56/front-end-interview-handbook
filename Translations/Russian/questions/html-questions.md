@@ -95,7 +95,7 @@
 |                                               | `cookie`                                                    | `localStorage` | `sessionStorage`    |
 | --------------------------------------------- | ----------------------------------------------------------- | -------------- | ------------------- |
 | Инициатор                                     | Клиент или сервер. Сервер использует заголовок `Set-Cookie` | Клиент         | Клиент              |
-| Истечение                                     | Задаётся вручную                                            | Навсегда       | По закрытию вкладки |
+| Срок действия                                 | Задаётся вручную                                            | Навсегда       | По закрытию вкладки |
 | Персистентность между сеансами браузера       | Зависит от того, установлен ли срок действия                | Да             | Нет                 |
 | Отправляется на сервер с каждым HTTP запросом | Автоматически проставляются в заголовке `Cookie` запроса    | Нет            | Нет                 |
 | Ограничения размера (на домен)                | 4kb                                                         | 10MB           | 10MB                |
@@ -111,11 +111,11 @@
 
 ### Объясните разницу между `<script>`, `<script async>` и `<script defer>`.
 
-* `<script>` - HTML parsing is blocked, the script is fetched and executed immediately, HTML parsing resumes after the script is executed.
-* `<script async>` - The script will be fetched in parallel to HTML parsing and executed as soon as it is available (potentially before HTML parsing completes). Use `async` when the script is independent of any other scripts on the page, for example, analytics.
-* `<script defer>` - The script will be fetched in parallel to HTML parsing and executed when the page has finished parsing. If there are multiple of them, each deferred script is executed in the order they were encoun­tered in the document. If a script relies on a fully-parsed DOM, the `defer` attribute will be useful in ensuring that the HTML is fully parsed before executing. There's not much difference in putting a normal `<script>` at the end of `<body>`. A deferred script must not contain `document.write`.
+* `<script>` - Парсинг HTML приостанавливается, скрипт загружается и выполняется немедленно, парсинг HTML продолжается после выполнения скрипта.
+* `<script async>` - Скрипт будет загружаться параллельно с парсингом HTML и выполнен так скоро, как это возможно (потенциально до окончания парсинга HTML). Используйте `async`, когда выполнение скрипта не зависит от остальных скриптов на странице, например для аналитики.
+* `<script defer>` - Скрипт будет загружаться параллельно с парсингом HTML и будет выполнен после парсинга страницы. Если на странице несколько таких скриптов, они будут выполняться по порядку расположения в документе. Если для скрипта требуется полное DOM дерево на момент выполнения, то `defer` атрибут отлично подойдёт. У этого подхода нет больших отличий от обычного `<script>` расположенного рядом с закрывающимся тегом `</body>`. Исключением для использования `deffer` является использование `document.write` внутри скрипта.
 
-Note: The `async` and `defer` attrib­utes are ignored for scripts that have no `src` attribute.
+Примечание: `async` и `defer` атрибуты игнорируются, если отсутствует атрибут `src`.
 
 ###### Источники
 
@@ -127,15 +127,15 @@ Note: The `async` and `defer` attrib­utes are ignored for scripts that have no 
 
 ### Почему хорошей практикой считается располагать `<link>` для подключения CSS между `<head></head>`, а `<script>` для подключения JS ставить перед `</body>`? Знаете ли вы исключения?
 
-**Placing `<link>`s in the `<head>`**
+**Размещение тэгов `<link>` в `<head>`**
 
-Putting `<link>`s in the head is part of the specification. Besides that, placing at the top allows the page to render progressively which improves the user experience. The problem with putting stylesheets near the bottom of the document is that it prohibits progressive rendering in many browsers, including Internet Explorer. Some browsers block rendering to avoid having to repaint elements of the page if their styles change. The user is stuck viewing a blank white page. It prevents the flash of unstyled contents.
+Размещение `<link>` в заголовке документа HTML - это часть спецификации HTML. Размещение в самом начале HTML документа тэгов `<link>`, позволяет документу отображаться постепенно, что улучшает восприятие пользователем информации. Если стили подключаются в конце HTML документа, это может заблокировать постепенное отображение документа во многих браузерах, например Internet Explorer. Некоторые браузеры блокируют отрисовку, чтобы избежать необходимость перекрашивать элементы страницы при изменении стилей. В этот момент пользователь, обычно, видит пустую белую страницу. Это предотвращает резкие изменения оформления контекста на странице.
 
-**Placing `<script>`s just before `</body>`**
+**Размещение тэгов `<script>` только перед `</body>`**
 
-`<script>`s block HTML parsing while they are being downloaded and executed. Downloading the scripts at the bottom will allow the HTML to be parsed and displayed to the user first.
+`<script>` блокирует парсинг HTML, скачивает скрипт и выполняет его. Скачивание скриптов в конце документа, позволяет браузеру сперва распарсить HTML и отобразить содержимое пользователю, а затем приступить к выполнению скриптов.
 
-An exception for positioning of `<script>`s at the bottom is when your script contains `document.write()`, but these days it's not a good practice to use `document.write()`. Also, placing `<script>`s at the bottom means that the browser cannot start downloading the scripts until the entire document is parsed. One possible workaround is to put `<script>` in the `<head>` and use the `defer` attribute.
+В некоторых ситуациях невозможно расположить `<script>` внизу документа, например при использовании в скрипте `document.write()`, хотя это плохая практика. Также, расположение `<script>` в конце документа, подразумевает, что браузер не может начать скачивание скриптов, пока не распарсит весь документ. Одним из возможных решений является размещение `<script>` внутри `<head>` с использованием атрибута `deffer`
 
 ###### Источники
 
