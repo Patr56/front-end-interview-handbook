@@ -145,15 +145,15 @@
 
 ### Что такое прогрессивный рендеринг?
 
-Progressive rendering is the name given to techniques used to improve the performance of a webpage (in particular, improve perceived load time) to render content for display as quickly as possible.
+Прогрессивный рендеринг - это название способов, используемых для повышения производительности веб-страницы (в частности, улучшение воспринимаемого времени загрузки) и отображения содержимого, в браузере, как можно быстрее.
 
-It used to be much more prevalent in the days before broadband internet but it is still used in modern development as mobile data connections are becoming increasingly popular (and unreliable)!
+Эти способы были распространены до появления широкополосного интернета, но они по-прежнему используются в современной разработке, так как мобильный интернет становится всё более популярным и надёжным.
 
-Examples of such techniques:
+Примеры некоторых способов:
 
-* Lazy loading of images - Images on the page are not loaded all at once. JavaScript will be used to load an image when the user scrolls into the part of the page that displays the image.
-* Prioritizing visible content (or above-the-fold rendering) - Include only the minimum CSS/content/scripts necessary for the amount of page that would be rendered in the users browser first to display as quickly as possible, you can then use deferred scripts or listen for the `DOMContentLoaded`/`load` event to load in other resources and content.
-* Async HTML fragments - Flushing parts of the HTML to the browser as the page is constructed on the back end. More details on the technique can be found [here](http://www.ebaytechblog.com/2014/12/08/async-fragments-rediscovering-progressive-html-rendering-with-marko/).
+* Отложенная загрузка изображений - Изображения на странице загружаются не все сразу. JavaScript будет использоваться для загрузки изображения, когда пользователь прокрутит веб-страницу до этого изображения.
+* Приоритизация видимого контента (или above-the-fold отрисовка) - Включает только минимум CSS/контента/скриптов необходимых для отрисовки страницы, которая будет, примерно, корректно отображена как можно быстрее, затем вы можете использовать `deffer` скрипты или слушать в JavaScript `DOMContentLoaded`/`load` события для загрузки других ресурсов и контента для работы пользователя с веб-страницей.
+* Асинхронные HTML-фрагменты - Отправка частей HTML страницы в браузер, по мере построения страницы на серверной части. Более подробно с этим способом ознакомиться [здесь (Eng)](http://www.ebaytechblog.com/2014/12/08/async-fragments-rediscovering-progressive-html-rendering-with-marko/).
 
 ###### Источники
 
