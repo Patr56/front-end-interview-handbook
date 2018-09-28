@@ -78,7 +78,7 @@
 * Оффлайн и Хранилище - методы, позволяющие сохранять информацию локально на стороне клиента (Кеш приложения, DOM Storage, IndexedDB).
 * Мультимедиа - создание и взаимодействие с видео и звуком (HTML5 audio и video, WebRTC, Camera API).
 * 2D/3D Графика и эффекты - способы значительно разнообразить  представление (Canvas, SVG, WebGL).
-* Производительность и интеграция - обеспечивает оптимизацию скорости и лучшеее использование компьютерного оборудования (Web Workers, JIT-компилирование).
+* Производительность и интеграция - обеспечивает оптимизацию скорости и лучшее использование компьютерного оборудования (Web Workers, JIT-компилирование).
 * Доступ к устройству - использование разных устройств для ввода и вывода информации (Camera API, Touch события, Геолокация).
 * Стилизация - создание изощренных и совершенных тем (CSS).
 
@@ -164,16 +164,23 @@
 
 ### Для чего используется атрибут `srcset` в теге изображения? Опишите процесс, который использует браузер при оценке содержимого этого атрибута.
 
-You would use the `srcset` attribute when you want to serve different images to users depending on their device display width - serve higher quality images to devices with retina display enhances the user experience while serving lower resolution images to low-end devices increase performance and decrease data wastage (because serving a larger image will not have any visible difference). For example: `<img srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 2000w" src="..." alt="">` tells the browser to display the small, medium or large `.jpg` graphic depending on the client's resolution. The first value is the image name and the second is the width of the image in pixels. For a device width of 320px, the following calculations are made:
+Атрибут `srcset` используется, когда понадобится показывать различные изображения пользователю в зависимости от ширины его экрана. Показывать изображения более высокого качества на устройства с retina дисплеями улучшит восприятие пользователя, и одновременно для бюджетных устройств, с меньшим разрешение экрана, можно передавать изображение с потерей качества, что повысит производительность, тем более отображение более качественной картинки не даст видимой разницы. Например: `<img srcset="small.jpg 500w, medium.jpg 1000w 2x, large.jpg 2000w 2x" src="..." alt="">` говорит браузеру отображать маленькую, среднюю и большую `.jpg` картинку, в зависимости от разрешения экрана пользователя. В параметрах первое значение это название файла с изображением, второе это ширина изображения в пикселях, а третье это плотность пикселей, по умолчанию считется 1x.
+Для устройств с шириной дисплея 320 пикселей производятся следующие вычисления:
 
 * 500 / 320 = 1.5625
 * 1000 / 320 = 3.125
 * 2000 / 320 = 6.25
 
-If the client's resolution is 1x, 1.5625 is the closest, and `500w` corresponding to `small.jpg` will be selected by the browser.
+Если плотность пикселей , то 1.5625 будет ближе, и `500w` соответствующий `small.jpg` будет выбран браузером для отображения.
 
+* 500 / 640 = 0.7812
+* 1000 / 640 = 1.5625
+* 2000 / 640 = 3.125
+
+Если разрешение будет 640px
 If the resolution is retina (2x), the browser will use the closest resolution above the minimum. Meaning it will not choose the 500w (1.5625) because it is greater than 1 and the image might look bad. The browser would then choose the image with a resulting ratio closer to 2 which is 1000w (3.125).
 
+`srcset` решает проблему, 
 `srcset`s solve the problem whereby you want to serve smaller image files to narrow screen devices, as they don't need huge images like desktop displays do — and also optionally that you want to serve different resolution images to high density/low-density screens.
 
 ###### Источники
@@ -185,7 +192,22 @@ If the resolution is retina (2x), the browser will use the closest resolution ab
 
 ### Приходилось ли вам работать с языками HTML-шаблонизации?
 
-Yes, Pug (formerly Jade), ERB, Slim, Handlebars, Jinja, Liquid, just to name a few. In my opinion, they are more or less the same and provide similar functionality of escaping content and helpful filters for manipulating the data to be displayed. Most templating engines will also allow you to inject your own filters in the event you need custom processing before display.
+Да, для JS:
+* [Pug](https://pugjs.org) (ранее Jade)
+* [Handlebars](https://handlebarsjs.com/)
+для Ruby:
+* [ERB](https://en.wikipedia.org/wiki/ERuby) (Embedded Ruby)
+* [Liquid](https://shopify.github.io/liquid/)
+* [Slim](http://slim-lang.com/)
+для Python:
+* [Jinja](https://github.com/pallets/jinja)
+для PHP:
+* [Blade](https://laravel.com/docs/blade)
+* [Twig](https://twig.symfony.com/)
+и так далее.
+
+По моему мнению, они обладают примерно одинаковыми возможностями для экранирования контента и полезными фильтрами для управления данными для отображения.
+Большинство шаблонизаторов также позволяют добавить собственные фильтры, в случае необходимости специальной обработки данных, перед отображением.
 
 [[↑] К оглавлению](#html-Вопросы-и-ответы)
 

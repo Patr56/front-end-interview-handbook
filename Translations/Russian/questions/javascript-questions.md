@@ -73,16 +73,16 @@ Event delegation is a technique involving adding event listeners to a parent ele
 
 ### Объясните, как `this` работает в JavaScript.
 
-There's no simple explanation for `this`; it is one of the most confusing concepts in JavaScript. A hand-wavey explanation is that the value of `this` depends on how the function is called. I have read many explanations on `this` online, and I found [Arnav Aggrawal](https://medium.com/@arnav_aggarwal)'s explanation to be the clearest. The following rules are applied:
+Нет простого объяснения для `this`, это одна из самых запутанных концепций в JavaScript. Значение `this` зависит от того, как вызывается функция. Я перечитал много объяснений в сети, одно из понятных объяснений дал [Arnav Aggrawal](https://medium.com/@arnav_aggarwal). Для `this` применяются следующие правила:
 
-1. If the `new` keyword is used when calling the function, `this` inside the function is a brand new object.
-2. If `apply`, `call`, or `bind` are used to call/create a function, `this` inside the function is the object that is passed in as the argument.
-3. If a function is called as a method, such as `obj.method()` — `this` is the object that the function is a property of.
-4. If a function is invoked as a free function invocation, meaning it was invoked without any of the conditions present above, `this` is the global object. In a browser, it is the `window` object. If in strict mode (`'use strict'`), `this` will be `undefined` instead of the global object.
-5. If multiple of the above rules apply, the rule that is higher wins and will set the `this` value.
-6. If the function is an ES2015 arrow function, it ignores all the rules above and receives the `this` value of its surrounding scope at the time it is created.
+1. Если используется `new` перед вызовом функции, тогда `this` внутри функции является новым объектом.
+2. Если используются `apply`, `call` или `bind` для вызова/создания функции, то `this` внутри функции будет объектом, переданным в аргументе.
+3. Если функция вызывается как метод объекта, например `obj.method()`, то `this` это объект, свойством которого является вызываемая функция.
+4. Если функция вызывается как вызов свободной функции, то есть она вызывается без каких-либо условий, указанных выше, `this` является глобальным объектом. В браузере это объект `window`. Если в строгом режиме (`"use strict"`, `this` будет` undefined` вместо глобального объекта.
+5. Если применяется несколько приведенных выше правил, правило, которое выше, выигрывает и устанавливает значение `this`.
+6. Если функция представляет собой стрелочную функцию из ES2015, она игнорирует все вышеприведенные правила и получает значение `this` окружения в момент её создания.
 
-For an in-depth explanation, do check out his [article on Medium](https://codeburst.io/the-simple-rules-to-this-in-javascript-35d97f31bde3).
+Для более глубокого понимания прочитайте [статью Eng](https://codeburst.io/the-simple-rules-to-this-in-javascript-35d97f31bde3).
 
 ###### Источники
 
@@ -93,7 +93,7 @@ For an in-depth explanation, do check out his [article on Medium](https://codebu
 
 ### Расскажите, как работает прототипное наследование.
 
-This is an extremely common JavaScript interview question. All JavaScript objects have a `prototype` property, that is a reference to another object. When a property is accessed on an object and if the property is not found on that object, the JavaScript engine looks at the object's `prototype`, and the `prototype`'s `prototype` and so on, until it finds the property defined on one of the `prototype`s or until it reaches the end of the prototype chain. This behavior simulates classical inheritance, but it is really more of [delegation than inheritance](https://davidwalsh.name/javascript-objects).
+Это распространенный вопрос на JavaScript интервью. Все объекты JavaScript имеют свойство `prototype`, то есть ссылку на другой объект. Когда пытаемся получить доступ к свойству объекта, и если это свойство не найдено в этом объекте, движок JavaScript смотрит на `prototype` объекта и `prototype` в `prototype` и т. д., пока не найдет свойство, определенное на одном из `prototype` или до тех пор, пока он не достигнет конца прототипной цепи. Это поведение имитирует классическое наследование, но оно больше [делегирование, чем наследование ENG](https://davidwalsh.name/javascript-objects).
 
 ###### Источники
 
@@ -104,11 +104,11 @@ This is an extremely common JavaScript interview question. All JavaScript object
 
 ### Что вы думаете о AMD против CommonJS?
 
-Both are ways to implement a module system, which was not natively present in JavaScript until ES2015 came along. CommonJS is synchronous while AMD (Asynchronous Module Definition) is obviously asynchronous. CommonJS is designed with server-side development in mind while AMD, with its support for asynchronous loading of modules, is more intended for browsers.
+Они имплементировали модульную систему, которая не была представлена в JavaScript до наступления ES2015. CommonJS синхронный, а AMD (Asynchronous Module Definition) асинхронный. CommonJS разработан с учетом особенностей сервера, в то время как AMD, поддерживая асинхронную загрузку модулей, больше предназначен для браузеров.
 
-I find AMD syntax to be quite verbose and CommonJS is closer to the style you would write import statements in other languages. Most of the time, I find AMD unnecessary, because if you served all your JavaScript into one concatenated bundle file, you wouldn't benefit from the async loading properties. Also, CommonJS syntax is closer to Node style of writing modules and there is less context-switching overhead when switching between client side and server side JavaScript development.
+Я считаю, что синтаксис AMD довольно многословный, а CommonJS ближе к стилю, который вы бы записывали в операторы импорта на других языках. В большинстве случаев я считаю AMD ненужным, потому что, если вы собираете весь свой JavaScript в один файл конкатенацией пакетов, вы не получите преимуществ от асинхронных загрузки. Кроме того, синтаксис CommonJS ближе к стилю Node для написания модулей, и при переключении между JavaScript и клиентской версией JavaScript меньше затрат на переключение контекста.
 
-I'm glad that with ES2015 modules, that has support for both synchronous and asynchronous loading, we can finally just stick to one approach. Although it hasn't been fully rolled out in browsers and in Node, we can always use transpilers to convert our code.
+Я рад, что с помощью модулей ES2015, поддерживающих синхронную и асинхронную загрузку, мы можем придерживаться одного подхода. Хотя он не был полностью реализован в браузерах и в Node, мы всегда можем использовать transpilers для преобразования нашего кода.
 
 ###### Источники
 
@@ -204,18 +204,18 @@ A closure is the combination of a function and the lexical environment within wh
 
 ### Можете ли вы описать основное различие между циклом `forEach` и циклом `.map()`? И в каких случаях каждый из них используется?
 
-To understand the differences between the two, let's look at what each function does.
+Что бы понять разницу между ними, давайте посмотри что каждая из них делает:
 
 **`forEach`**
 
-* Iterates through the elements in an array.
-* Executes a callback for each element.
-* Does not return a value.
+* Итерирует по элементам массива.
+* Выполняет функцию обратного вызова для каждого элемента.
+* Не возвращает значение.
 
 ```js
 const a = [1, 2, 3];
 const doubled = a.forEach((num, index) => {
-  // Do something with num and/or index.
+  // Делаем что-то с num и/или index
 });
 
 // doubled = undefined
@@ -223,8 +223,8 @@ const doubled = a.forEach((num, index) => {
 
 **`map`**
 
-* Iterates through the elements in an array.
-* "Maps" each element to a new element by calling the function on each element, creating a new array as a result.
+* Итерирует по элементам массива.
+* Преобразует каждый элемент в новый элемент, вызывая функцию для каждого элемента, создавая в результате новый массив.
 
 ```js
 const a = [1, 2, 3];
@@ -235,7 +235,7 @@ const doubled = a.map(num => {
 // doubled = [2, 4, 6]
 ```
 
-The main difference between `.forEach` and `.map()` is that `.map()` returns a new array. If you need the result, but do not wish to mutate the original array, `.map()` is the clear choice. If you simply need to iterate over an array, `forEach` is a fine choice.
+Главное отличие между `.forEach` и `.map()` в том, что `.map()` возвращает новый массив. Если вы хотите изменить содержимое массива, но не хотите мутировать исходный массив, `.map()` это правильный выбор. Если вы хотите просто проитись по всем элементам массива, то `forEach` будет хорошим решением.
 
 ###### Источники
 
@@ -245,13 +245,15 @@ The main difference between `.forEach` and `.map()` is that `.map()` returns a n
 
 ### В каких случаях обычно используются анонимные функции?
 
-They can be used in IIFEs to encapsulate some code within a local scope so that variables declared in it do not leak to the global scope.
+Они могут быть использованы в IIFE для изоляции некоторго кода в локальную область, из которой объявленные переменные не попадут в глобальную область видимости. 
 
 ```js
 (function() {
-  // Some code here.
+  // Код.
 })();
 ```
+
+Как функция обратного вызова, которая используется один раз и нет необходимости переиспользовать её в других местах.
 
 As a callback that is used once and does not need to be used anywhere else. The code will seem more self-contained and readable when handlers are defined right inside the code calling them, rather than having to search elsewhere to find the function body.
 
@@ -261,7 +263,7 @@ setTimeout(function() {
 }, 1000);
 ```
 
-Arguments to functional programming constructs or Lodash (similar to callbacks).
+В качестве аргументов для функционального программирования или в [Lodash](https://lodash.com/) (в качестве функций обратного вызова)
 
 ```js
 const arr = [1, 2, 3];
@@ -280,19 +282,19 @@ console.log(double); // [2, 4, 6]
 
 ### Как вы организуете свой код? (module pattern, classical inheritance)
 
-In the past, I used Backbone for my models which encourages a more OOP approach, creating Backbone models and attaching methods to them.
+В прошлом, я использовал [Backbone](http://backbonejs.org/) для моих моделей, это больше похоже на ООП, создание Backbone моделей и методов для них.
 
-The module pattern is still great, but these days, I use React/Redux which utilize a single-directional data flow based on Flux architecture. I would represent my app's models using plain objects and write utility pure functions to manipulate these objects. State is manipulated using actions and reducers like in any other Redux application.
+Паттерн "Модули" всё ещё хорош, но в наши дни, я использую React/Redux, которые используют однонаправленный поток данных на основе архитектуры Flux. Я представляю модели своего приложения, используя простые объекты, и использую чистые функции для уравления этими объектами. Состояние приложения управляется при помощи действий и редьюсеров как в любом другом Redux приложении.
 
-I avoid using classical inheritance where possible. When and if I do, I stick to [these rules](https://medium.com/@dan_abramov/how-to-use-classes-and-sleep-at-night-9af8de78ccb4).
+Я избегаю использовать классическое наследование, где это возможно. Когда и если я это буду использовать, я придерживаюсь [этих правил](https://medium.com/@dan_abramov/how-to-use-classes-and-sleep-at-night-9af8de78ccb4).
 
 [[↑] К оглавлению](#js-Вопросы)
 
 ### В чем разница между host-объектами и нативными объектами?
 
-Native objects are objects that are part of the JavaScript language defined by the ECMAScript specification, such as `String`, `Math`, `RegExp`, `Object`, `Function`, etc.
+Нативные объекты, это объекты, которые являются частью языка JavaScript, определенные в ECMAScript спецификации, такие как `String`, `Math`, `RegExp`, `Object`, `Function` и т.д.
 
-Host objects are provided by the runtime environment (browser or Node), such as `window`, `XMLHTTPRequest`, etc.
+host-объекты предоставляются исполняемым окруженим таким как браузер или Node, например `window`, `XMLHTTPRequest` и т.д.
 
 ###### Источники
 
